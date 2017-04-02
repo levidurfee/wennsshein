@@ -1,0 +1,25 @@
+{
+  "name": "wennsshein",
+  "version": "0.1.0",
+  "description": "Remember numbers using a system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levidurfee/wennsshein.git"
+  },
+  "author": "Levi Durfee <levi.durfee@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levidurfee/wennsshein/issues"
+  },
+  "homepage": "https://github.com/levidurfee/wennsshein#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-uglify": "^2.1.2"
+  }
+}
