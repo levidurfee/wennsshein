@@ -28,7 +28,13 @@ var Wennsshein = function () {
 
   _createClass(Wennsshein, [{
     key: 'basic',
-    value: function basic() {}
+    value: function basic() {
+      var result = '';
+      for (var i = 0; i < this.word.length; i++) {
+        result += Wennsshein.MAP[this.word[i]][0];
+      }
+      console.log(result);
+    }
   }]);
 
   return Wennsshein;

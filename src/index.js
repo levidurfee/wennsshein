@@ -19,7 +19,11 @@ class Wennsshein {
   }
 
   basic() {
-
+    let result = '';
+    for(var i=0; i<this.word.length; i++) {
+      result += Wennsshein.MAP[this.word[i]][0];
+    }
+    console.log(result);
   }
 }
 
