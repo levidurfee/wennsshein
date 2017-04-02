@@ -18,8 +18,6 @@ class Wennsshein {
       'a', 'e', 'i', 'o', 'u'
     ];
 
-    this.readFile();
-
     return this;
   }
 
@@ -31,10 +29,9 @@ class Wennsshein {
     console.log(result);
   }
 
-  readFile() {
-    fs.readFile('./src/words.txt', 'utf8', function (err, data) {
-      console.log(data);
-    });
+  populate(file) {
+    this.words = fs.readFileSync(file).toString().split("\n");
+    console.log(this.words.length);
   }
 }
 

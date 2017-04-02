@@ -25,8 +25,6 @@ var Wennsshein = function () {
 
     Wennsshein.VOWELS = ['a', 'e', 'i', 'o', 'u'];
 
-    this.readFile();
-
     return this;
   }
 
@@ -40,11 +38,10 @@ var Wennsshein = function () {
       console.log(result);
     }
   }, {
-    key: 'readFile',
-    value: function readFile() {
-      fs.readFile('./src/words.txt', 'utf8', function (err, data) {
-        console.log(data);
-      });
+    key: 'populate',
+    value: function populate(file) {
+      this.words = fs.readFileSync(file).toString().split("\n");
+      console.log(this.words.length);
     }
   }]);
 
