@@ -1,4 +1,3 @@
 const Wennsshein = require("./src/index.js");
 
-var w = new Wennsshein('1234');
-w.basic();
+var w = new Wennsshein().basic('1234');

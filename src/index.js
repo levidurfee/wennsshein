@@ -1,5 +1,5 @@
 class Wennsshein {
-  constructor(word) {
+  constructor() {
     Wennsshein.MAP = {
       '0': ['s', 'z', 'c'],
       '1': ['t', 'd'],
@@ -17,15 +17,13 @@ class Wennsshein {
       'a', 'e', 'i', 'o', 'u'
     ];
 
-    this.word = word;
-
     return this;
   }
 
-  basic() {
+  basic(word) {
     let result = '';
-    for(var i=0; i<this.word.length; i++) {
-      result += Wennsshein.MAP[this.word[i]][0];
+    for(var i=0; i<word.length; i++) {
+      result += Wennsshein.MAP[word[i]][0];
     }
     console.log(result);
   }

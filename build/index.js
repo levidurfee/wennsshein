@@ -5,7 +5,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Wennsshein = function () {
-  function Wennsshein(word) {
+  function Wennsshein() {
     _classCallCheck(this, Wennsshein);
 
     Wennsshein.MAP = {
@@ -23,17 +23,15 @@ var Wennsshein = function () {
 
     Wennsshein.VOWELS = ['a', 'e', 'i', 'o', 'u'];
 
-    this.word = word;
-
     return this;
   }
 
   _createClass(Wennsshein, [{
     key: 'basic',
-    value: function basic() {
+    value: function basic(word) {
       var result = '';
-      for (var i = 0; i < this.word.length; i++) {
-        result += Wennsshein.MAP[this.word[i]][0];
+      for (var i = 0; i < word.length; i++) {
+        result += Wennsshein.MAP[word[i]][0];
       }
       console.log(result);
     }
