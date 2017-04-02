@@ -21,6 +21,8 @@ var Wennsshein = function () {
       '9': ['b', 'p']
     };
 
+    Wennsshein.VOWELS = ['a', 'e', 'i', 'o', 'u'];
+
     this.word = word;
 
     return this;
