@@ -4,6 +4,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+fs = require('fs');
+
 var Wennsshein = function () {
   function Wennsshein() {
     _classCallCheck(this, Wennsshein);
@@ -23,6 +25,8 @@ var Wennsshein = function () {
 
     Wennsshein.VOWELS = ['a', 'e', 'i', 'o', 'u'];
 
+    this.readFile();
+
     return this;
   }
 
@@ -34,6 +38,13 @@ var Wennsshein = function () {
         result += Wennsshein.MAP[word[i]][0];
       }
       console.log(result);
+    }
+  }, {
+    key: 'readFile',
+    value: function readFile() {
+      fs.readFile('./src/words.txt', 'utf8', function (err, data) {
+        console.log(data);
+      });
     }
   }]);
 

@@ -1,3 +1,4 @@
+fs = require('fs');
 class Wennsshein {
   constructor() {
     Wennsshein.MAP = {
@@ -17,6 +18,8 @@ class Wennsshein {
       'a', 'e', 'i', 'o', 'u'
     ];
 
+    this.readFile();
+
     return this;
   }
 
@@ -26,6 +29,12 @@ class Wennsshein {
       result += Wennsshein.MAP[word[i]][0];
     }
     console.log(result);
+  }
+
+  readFile() {
+    fs.readFile('./src/words.txt', 'utf8', function (err, data) {
+      console.log(data);
+    });
   }
 }
 
