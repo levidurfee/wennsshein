@@ -25,22 +25,38 @@ class Wennsshein {
     let result = ''; // store consonants of word
     let count = 0;
     let currentWord = '';
+    let vowelLess = '';
     for(var i=0; i<word.length; i++) {
       result += Wennsshein.MAP[word[i]][0];
     }
 
+    console.log("Looking for: ", result);
+
     for(var x=0; x<this.words.length; x++) {
+
       currentWord = this.words[x];
       count = 0;
 
       for(var y=0; y<currentWord.length; y++) {
+
         if(currentWord[y] == result[y]) {
           count++;
-          if(count >= result.length) {
-            console.log(currentWord);
-          }
         }
-      }
+
+        if(this.isVowel(currentWord[y])) {
+          count--;
+        }
+
+        vowelLess = currentWord.replace(/[aeiou]/ig,'');
+        if(result == vowelLess) {
+          console.log('Here it is: ', currentWord);
+        }
+
+        if(count >= result.length) {
+          console.log(currentWord);
+        }
+      
+      } // end for y
     }
 
     return this;

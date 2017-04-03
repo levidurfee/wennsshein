@@ -855,6 +855,8 @@ teach
 team
 teeth
 tell
+tnmr
+tinmore
 temperature
 ten
 term
