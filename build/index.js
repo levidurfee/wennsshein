@@ -23,8 +23,6 @@ var Wennsshein = function () {
       '9': ['b', 'p']
     };
 
-    Wennsshein.VOWELS = ['a', 'e', 'i', 'o', 'u'];
-
     return this;
   }
 
@@ -32,7 +30,6 @@ var Wennsshein = function () {
     key: 'solve',
     value: function solve(word) {
       var result = ''; // store consonants of word
-      var count = 0;
       var currentWord = '';
       var vowelLess = '';
       for (var i = 0; i < word.length; i++) {
@@ -44,40 +41,14 @@ var Wennsshein = function () {
       for (var x = 0; x < this.words.length; x++) {
 
         currentWord = this.words[x];
-        count = 0;
 
-        for (var y = 0; y < currentWord.length; y++) {
-
-          if (currentWord[y] == result[y]) {
-            count++;
-          }
-
-          if (this.isVowel(currentWord[y])) {
-            count--;
-          }
-
-          vowelLess = currentWord.replace(/[aeiou]/ig, '');
-          if (result == vowelLess) {
-            console.log('Here it is: ', currentWord);
-          }
-
-          if (count >= result.length) {
-            console.log(currentWord);
-          }
-        } // end for y
+        vowelLess = currentWord.replace(/[aeiou]/ig, '');
+        if (result == vowelLess) {
+          console.log('Here it is: ', currentWord);
+        }
       }
 
       return this;
-    }
-  }, {
-    key: 'isVowel',
-    value: function isVowel(character) {
-      for (var i = 0; i < Wennsshein.VOWELS.length; i++) {
-        if (character == Wennsshein.VOWELS[i]) {
-          return true;
-        }
-      }
-      return false;
     }
   }, {
     key: 'populate',
