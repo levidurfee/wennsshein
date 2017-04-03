@@ -21,12 +21,21 @@ class Wennsshein {
     return this;
   }
 
-  basic(word) {
-    let result = '';
+  solve(word) {
+    let result = ''; // store consonants of word
     for(var i=0; i<word.length; i++) {
       result += Wennsshein.MAP[word[i]][0];
     }
-    console.log(result);
+    return this;
+  }
+
+  isVowel(character) {
+    for(var i=0; i<Wennsshein.VOWELS.length; i++) {
+      if(character == Wennsshein.VOWELS[i]) {
+        return true;
+      }
+    }
+    return false;
   }
 
   populate(file) {

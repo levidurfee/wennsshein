@@ -29,13 +29,23 @@ var Wennsshein = function () {
   }
 
   _createClass(Wennsshein, [{
-    key: 'basic',
-    value: function basic(word) {
-      var result = '';
+    key: 'solve',
+    value: function solve(word) {
+      var result = ''; // store consonants of word
       for (var i = 0; i < word.length; i++) {
         result += Wennsshein.MAP[word[i]][0];
       }
-      console.log(result);
+      return this;
+    }
+  }, {
+    key: 'isVowel',
+    value: function isVowel(character) {
+      for (var i = 0; i < Wennsshein.VOWELS.length; i++) {
+        if (character == Wennsshein.VOWELS[i]) {
+          return true;
+        }
+      }
+      return false;
     }
   }, {
     key: 'populate',

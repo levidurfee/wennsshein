@@ -1,5 +1,5 @@
 const Wennsshein = require("./src/index.js");
 
 var w = new Wennsshein()
-w.basic('1234');
-w.populate('./src/words.txt');
+w.populate('./src/words.txt'); // get list of words
+w.solve('1234');
