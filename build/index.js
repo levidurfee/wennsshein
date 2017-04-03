@@ -32,7 +32,7 @@ var Wennsshein = function () {
     key: 'solve',
     value: function solve(word) {
       var result = ''; // store consonants of word
-      var ri = 0; // result index
+      var count = 0;
       var currentWord = '';
       for (var i = 0; i < word.length; i++) {
         result += Wennsshein.MAP[word[i]][0];
@@ -40,10 +40,14 @@ var Wennsshein = function () {
 
       for (var x = 0; x < this.words.length; x++) {
         currentWord = this.words[x];
+        count = 0;
+
         for (var y = 0; y < currentWord.length; y++) {
           if (currentWord[y] == result[y]) {
-            console.log(currentWord);
-            console.log(currentWord[y]);
+            count++;
+            if (count >= result.length) {
+              console.log(currentWord);
+            }
           }
         }
       }
@@ -64,7 +68,7 @@ var Wennsshein = function () {
     key: 'populate',
     value: function populate(file) {
       this.words = fs.readFileSync(file).toString().split("\n");
-      console.log(this.words.length);
+      //console.log(this.words.length);
     }
   }]);
 

@@ -23,7 +23,7 @@ class Wennsshein {
 
   solve(word) {
     let result = ''; // store consonants of word
-    let ri = 0; // result index
+    let count = 0;
     let currentWord = '';
     for(var i=0; i<word.length; i++) {
       result += Wennsshein.MAP[word[i]][0];
@@ -31,10 +31,14 @@ class Wennsshein {
 
     for(var x=0; x<this.words.length; x++) {
       currentWord = this.words[x];
+      count = 0;
+
       for(var y=0; y<currentWord.length; y++) {
         if(currentWord[y] == result[y]) {
-          console.log(currentWord);
-          console.log(currentWord[y]);
+          count++;
+          if(count >= result.length) {
+            console.log(currentWord);
+          }
         }
       }
     }
@@ -53,7 +57,7 @@ class Wennsshein {
 
   populate(file) {
     this.words = fs.readFileSync(file).toString().split("\n");
-    console.log(this.words.length);
+    //console.log(this.words.length);
   }
 }
 
