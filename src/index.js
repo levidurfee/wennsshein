@@ -18,6 +18,19 @@ class Wennsshein {
   }
 
   solve(word) {
+    if(word.includes(' ')) {
+      var words = word.split(' ');
+      for(var i=0; i<words.length; i++) {
+        this.process(words[i]);
+      }
+      return this;
+    }
+
+    this.process(word);
+    return this;
+  }
+
+  process(word) {
     let result = ''; // store consonants of word
     let currentWord = '';
     let vowelLess = '';

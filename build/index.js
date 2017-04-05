@@ -29,6 +29,20 @@ var Wennsshein = function () {
   _createClass(Wennsshein, [{
     key: 'solve',
     value: function solve(word) {
+      if (word.includes(' ')) {
+        var words = word.split(' ');
+        for (var i = 0; i < words.length; i++) {
+          this.process(words[i]);
+        }
+        return this;
+      }
+
+      this.process(word);
+      return this;
+    }
+  }, {
+    key: 'process',
+    value: function process(word) {
       var result = ''; // store consonants of word
       var currentWord = '';
       var vowelLess = '';
